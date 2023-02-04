@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Form Mahasiswa</h1>
+    Nama : <input type="text" id="nama" />
+    <button onclick="getDataInput()">submit</button>
+    <br />
+    <br />
+    <ul id="nama_mhs"></ul>
+
+    Nilai : <input type="text" id="nilai" />
+    <button onclick="getDataNilaiInput()">submit</button>
+    <br />
+    <br />
+    <ul id="nilai_mhs"></ul>
+
+    <script>
+      let data = [];
+      function getDataInput() {
+        const nama_input = document.getElementById("nama");
+        console.log(nama_input.value);
+        data.push(nama_input.value);
+        console.log(data);
+
+        const node = document.createElement("li");
+        const value_li = document.createTextNode(nama_input.value);
+        node.appendChild(value_li);
+        document.getElementById("nama_mhs").appendChild(node);
+      }
+
+      let data_nilai = [];
+      function getDataNilaiInput() {
+        const nilai_input = document.getElementById("nilai");
+        console.log(nilai_input.value);
+        data_nilai.push(nilai_input.value);
+        console.log(data_nilai);
+
+        const node = document.createElement("li");
+        const value_li = document.createTextNode(nilai_input.value);
+        node.appendChild(value_li);
+        document.getElementById("nilai_mhs").appendChild(node);
+      }
+    </script>
+  </body>
+</html>
